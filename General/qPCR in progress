@@ -1,0 +1,89 @@
+qPCR
+================================================================================
+Description: After reverse transcription of RNA, cDNA is amplified using SYBR Green to quantify number of transcripts
+This is a generalized protocol that can be augmented depending on many variables
+
+[Go To Protocol](#protocol)
+
+Materials:
+--------------------------------------------------------------------------------
+  For Reverse Transcription:
+  * [iScript cDNA Synthesis Kit](https://www.bio-rad.com/en-us/sku/1708891-iscript-cdna-synthesis-kit-100-x-20-ul-rxns?ID=1708891)
+      ◦  RT Buffer
+      ◦  RT Enzyme 
+   * RNA template  
+    ◦ 1 ng to 1ug of DNase cleaned up RNA
+  * Molecular grade water
+  * PCR strip tubes
+
+  For qPCR
+  * 10 µM Forward Primer
+  * 10 µM Reverse Primer
+  * Molecular grade water
+  * cDNA diluted with 100ul of molecular grade water
+  * [PowerUp SYBR green](https://www.thermofisher.com/order/catalog/product/A25742)
+  * [384 well plate](https://www.bio-rad.com/en-us/sku/HSP3805-hard-shell-384-well-pcr-plates-thin-wall-skirted-clear-white?ID=HSP3805) 
+  * [Plate Film](https://www.bio-rad.com/en-us/sku/MSB1001-microseal-b-pcr-plate-sealing-film-adhesive-optical?ID=MSB1001) 
+  
+Equipment Required:
+--------------------------------------------------------------------------------
+
+  * Thermocycler-Cerberus
+  * qPCR thermocycler-Biorad Opus 384
+  
+Protocol:
+--------------------------------------------------------------------------------
+Reverse Transcription Reaction Protocol:
+**1.** Mix 1 µl of DNA template (per 25 µL reaction) with buffer components according to the polymerase chosen:
+
+  * [Q5 Hot-start Master Mix](https://www.neb.com/protocols/2012/08/30/protocol-for-q5-hot-start-high-fidelity-2x-master-mix-m0494)
+  * [Q5 Hot-start Polymerase](https://www.neb.com/protocols/2012/08/30/pcr-using-q5-hot-start-high-fidelity-dna-polymerase-m0493)
+  * [Phusion Polymerase](https://www.neb.com/protocols/0001/01/01/pcr-protocol-m0530)
+  
+  _Note: All of these (and others) work, and sometimes certain polymerases work better for specific amplicons._<br/>_For difficult amplicons, adding DMSO to a final concentration of 3 % can help._
+  
+**2.** Incubate samples in thermocycler with the following settings:  
+
+  | Cycles | Temp | Time | Step |
+  | ---------: | :--------: | :---------: |:---------: |
+  | **1** | **98 °C** | **0:30** | **inital denaturation** |
+  
+  **Optional Touchdown phase for lowly represented targets in cDNA**<br/>Annealing temp is reduced by 1 degree each cycle. Total cycles (this phase and next) should not exceed 40.
+  || 98 °C | 0:10 | denaturation |
+  | ---------: | :--------: | :---------: |:---------: |
+  | **variable** | **72->target °C** | **0:30** | **annealing** |
+  || **72 °C** | **30 s per kb** | **extension** |
+  
+  **Standard amplification phase**
+  || 98 °C | 0:10 | denaturation |
+  | ---------: | :--------: | :---------: |:---------: |
+  | **30-35X** | **target °C** | **0:30** | **annealing** |
+  | | **72 °C** | **30 s per kb** | **extension** |
+ 
+  | 1 | 72 °C | 2-5 minutes | final extension |
+  | ---------: | :--------: | :---------: |:---------: |
+  
+  _Note: the extension times and annealing temps can be optimized for amplicon length and primer Tm's_
+<!-- The text below creates dropdown lists for links to next steps or hyperlinks -->
+
+<details>
+  <summary>Next Steps</summary>
+
+</p> <a href="https://www.neb.com/protocols/2015/12/08/quick-protocol-for-monarch-pcr-dna-cleanup-kit-5-g-t1030">
+Monarch PCR Cleanup (NEB) </a>
+
+</p> <a href="./DNA-Agarose-Gel.md">
+Gel Verification </a>
+
+</p> <a href="../Gateway-Cloning/pDONR-BP-reaction.md">
+pENTR Creation</a>
+
+</details>
+
+<details>
+  <summary>More Info</summary>
+  
+  <a href="https://www.neb.com/protocols/0001/01/01/pcr-protocol-m0530">
+NEB Phusion Website</a>  
+
+</details>
